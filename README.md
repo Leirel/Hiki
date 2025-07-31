@@ -1,2 +1,2 @@
-# Hiki
+# Hiki-calculator-assignment
 assignment
