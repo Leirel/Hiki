@@ -81,7 +81,19 @@ clearButton.addEventListener('click', () => {
 // 연산자 입력
 operatorButtons.forEach(button => {
     button.addEventListener('click', () => {
-        const nextOperator = button.textContent;
+        const displayOperator = button.textContent;
+
+        // 표시된 연산자를 실제 연산자로 매핑
+        const operatorMap = {
+            '÷': '/',
+            '×': '*',
+            '−': '-', // 유니코드 minus
+            '+': '+'
+        };
+
+        const nextOperator = operatorMap[displayOperator];
+
+        if (!nextOperator) return; // 잘못된 연산자 예외 처리
 
         // 연속 연산자 방지
         if (operator !== null) return;
